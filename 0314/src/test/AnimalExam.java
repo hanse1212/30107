@@ -1,0 +1,35 @@
+package test;
+
+public class AnimalExam {
+
+	public static void main(String[] args) {
+		Cat c1 = new Cat("고양이");
+		c1.eat();
+		c1.eat();
+	}
+
+}
+class Animal{
+	String name;
+	int food = 0;
+	
+	public Animal() {}
+	public void eat() {
+		System.out.println("eat 함수를 호출할 때맏다 food 값이 10씩 증가합니다.");
+	}
+}
+
+class Cat extends Animal{
+	int age = 3;
+	public Cat(String name) {
+		this.name = name;
+		System.out.println("동물의 종류는 " + name + "이고, " + age + "살 입니다.");
+	}
+	
+	@Override
+	public void eat() {
+		super.eat();
+		food += 10;
+		System.out.println("오늘 먹은 음식의 양은 " + food + "g입니다.");
+	}
+}
